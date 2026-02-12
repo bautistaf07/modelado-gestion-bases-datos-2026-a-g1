@@ -1,1 +1,9 @@
-hello world
+Respuesta a pregunta 1:
+Me fijaría en señales como cuando empiezan a salir muchos estudiantes repetidos con nombres escritos diferente, cuando las notas no coinciden entre lo que tiene el docente 
+y lo que llega a coordinación, cuando es difícil ver el historial completo de un estudiante en todas las materias y años o periodos,
+y cuando hay riesgo de perder información por estar copiando y sobrescribiendo archivos.
+
+Respuesta a pregunta 2:
+El tipo de SGBD más adecuado sería uno relacional, porque la información está bien organizada en cosas que se relacionan entre sí, 
+como estudiantes, materias, grupos, años, notas, etc. Ayudaría a que no haya duplicados, a que las notas queden en un solo lugar y a que sea más fácil sacar reportes o ver el historial completo de cada estudiante. 
+NoSQL se usa más cuando los datos cambian mucho de forma o son demasiado grandes, ya sería dependiendo de los estudiantes.
