@@ -1,1 +1,12 @@
+Respuesta a la pregunta 1: ¿Qué pasaría si no definimos correctamente las claves de cada entidad desde el inicio?
+Si no definimos bien las claves de cada entidad desde el inicio, podrían aparecer muchos problemas como estudiantes repetidos, 
+notas que se le asignan al estudiante equivocado o matrículas que no se pueden relacionar correctamente con un grupo o un periodo,
+sería más difícil actualizar información sin crear errores, ya que no habría una forma segura de identificar a cada registro de manera única.
 
+Respuesta a la pregunta 2: ¿Qué ventajas aporta tener identificadas las entidades antes de pasar al diagrama ER formal?
+Tener identificadas las entidades antes de hacer el diagrama ER formal ayuda a organizar las ideas y a entender qué cosas son realmente importantes en el sistema,
+por ejemplo estudiante, asignatura, grupo, matrícula
+
+Respuesta a la pregunta 3: ¿Qué información adicional consideras crítica en un sistema académico que aún no hemos modelado?
+Una información adicional que considero crítica en un sistema académico y que aún no hemos modelado puede ser la parte de evaluaciones, 
+parciales, trabajos, quices, y cómo se calculan las notas finales, porque no siempre es una sola nota y hay porcentajes.
