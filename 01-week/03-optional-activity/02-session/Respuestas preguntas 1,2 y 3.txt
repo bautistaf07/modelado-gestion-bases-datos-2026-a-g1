@@ -1,0 +1,83 @@
+1. ¿Qué pasaría si no definimos correctamente las claves de cada entidad desde el inicio?
+Respuesta: El sistema podría enfrentar varios problemas como por ejemplo, podríamos tener registros duplicados, como estudiantes con nombres similares o asignaturas sin relacionarse, lo que dificulta la integridad de los datos, puede generar confusión al intentar acceder o actualizar información y hasta la perdida del acceso completo.
+
+Ejemplo:
+
+Supongamos dos registros de estudiantes en una base de datos académica:
+
+CÓDIGO ESTUDIANTE	NOMBRE ESTUDIANTE	ASIGNATURA	NOTA
+123	María López	BD-101	4.5
+123	María López	BD-101	4.0
+
+Acá si no definimos una clave única, en este caso, CÓDIGO ESTUDIANTE, podemos tener registros duplicados o inconsistentes, con variaciones en el nombre o notas diferentes para la misma persona.
+
+---
+
+2. ¿Qué ventajas aporta tener identificadas las entidades antes de pasar al diagrama ER formal?
+Respuesta: Facilitaría la comprensión y estructuración de la base de datos, permite saber qué datos debemos almacenar y cómo se interrelacionan, lo que simplifica la creación de relaciones entre las entidades, podemos evitar redundancias y asegurar que no falten datos importantes.
+
+Ejemplo gráfico:
+
+Antes de crear el diagrama ER formal, se tiene que definir las entidades y cómo se relacionan. Por ejemplo, identificando que Estudiante se relaciona con Matrícula y Grupo, mientras que Grupo se relaciona con Asignatura. Lo que ayudaría a evitar redundancias y errores en la estructuración del modelo.
+
+Entidades identificadas:
+
+Estudiante
+
+Asignatura
+
+Grupo
+
+Matrícula
+
+Relaciones:
+
+Un Estudiante puede estar inscrito en varias Asignaturas a través de Matrícula.
+
+Un Grupo está asociado a una Asignatura y tiene un Docente.
+
+---
+
+3. ¿Qué información adicional consideras crítica en un sistema académico que aún no hemos modelado?
+Respuesta: Podría ser el historial de calificaciones detallado para cada estudiante, que incluya notas finales, evaluaciones, parciales, quices o trabajos. También podría ser el estado académico de los estudiantes, si están activos, en prueba o graduados, y los prerrequisitos para cada asignatura. El registro de asistencia o de comentarios del docente en los trabajos o en cada estudiante.
+
+Una representación gráfica de un modelo más completo puede ayudar a visualizar cómo podrían integrarse elementos adicionales al sistema, como los que había nombrado anteriormente.
+
+Ejemplo gráfico:
+
+Modelo adicional propuesto:
+
+Historial de calificaciones: Mostrar cómo una asignatura tiene múltiples evaluaciones que afectan la calificación final.
+
+Estado académico: Añadir una entidad Estado Académico que indique si el estudiante está activo, suspendido, o graduado.
+
+Prerrequisitos: Relacionar asignaturas para indicar qué cursos deben tomarse antes de otros.
+
+Asignatura: BD-102
+
+Evaluación
+- Asignatura: BD-101
+- Evaluación: Examen Parcial
+- Fecha: 2026-03-15
+- Calificación: 4.5
+
+Evaluación: Proyecto Final
+- Fecha: 2026-06-10
+- Calificación: 4.8
+
+Asignatura: BD-102
+- Evaluación: Examen Parcial
+- Fecha: 2026-03-18
+- Calificación: 4.0
+
+Evaluación: Proyecto Final
+- Fecha: 2026-06-12
+- Calificación: 4.3
+
+6. Estado Académico
+Estudiante: María López (Código 1001)
+Estado: Activo
+
+7.Prerrequisitos
+Asignatura: BD-102
+Prerrequisito: BD-101 (Modelado y Gestión de Bases de Datos)
