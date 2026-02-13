@@ -1,0 +1,55 @@
+Respuesta a la pregunta: ¿Qué otras entidades podrían ser necesarias en un sistema académico real? Piensa en: aulas, horarios, prerrequisitos, calificaciones parciales...
+
+Aula: Esta entidad sería fundamental para registrar las aulas donde se den las clases. Tendría atributos como:
+
+Código del Aula (clave primaria)
+
+Ubicación (edificio, piso, número)
+
+Capacidad (número de estudiantes que puede albergar)
+
+Relación: Un Docente "enseña en" un Aula para dictar una Asignatura. Esto podría ser una relación binaria entre Docente y Aula, con un atributo de hora de clase.
+
+Horario: Para gestionar las horas en que se imparten las asignaturas, sería de utilidad crear una entidad Horario. Esta entidad tendría atributos como:
+
+Código Horario (clave primaria)
+
+Día (lunes, martes, etc.)
+
+Hora de inicio (hora en que comienza la clase)
+
+Hora de fin (hora en que termina la clase)
+
+Relación: Un Grupo de Asignatura estaría vinculado a un Horario. Un estudiante podría "pertenecer" a un Grupo, que está asociado con un Horario.
+
+Prerrequisitos: Algunas asignaturas requieren que se hayan aprobado otras antes de inscribirse. Para modelar esto, podemos tener una entidad Prerrequisito:
+
+Asignatura (clave primaria, referenciada desde Asignatura)
+
+Prerrequisito (relaciona la asignatura con una asignatura que debe haberse aprobado previamente)
+
+Relación: La relación Pre-requisito entre Asignatura y Asignatura podría ser representada como una relación ternaria, donde una asignatura tiene una dependencia de otra.
+
+Calificaciones Parciales: Para gestionar las evaluaciones a lo largo del semestre, se podría agregar una entidad Calificación Parcial:
+
+Código Calificación (clave primaria)
+
+Fecha (fecha de la evaluación parcial)
+
+Nota (calificación obtenida)
+
+Tipo (examen, tarea, proyecto)
+
+Relación: Un Estudiante "tiene" Calificación Parcial en una Asignatura, lo que permite registrar múltiples calificaciones parciales a lo largo de un curso.
+
+Curso: Para manejar los diferentes tipos de cursos, como los cursos de verano o los cursos extracurriculares, se puede introducir una entidad Curso:
+
+Código Curso (clave primaria)
+
+Nombre del Curso
+
+Duración (en semanas)
+
+Tipo de Curso (regular, verano, intensivo)
+
+Relación: Un Estudiante puede "inscribirse" en un Curso, que puede ser una relación independiente del programa académico.
