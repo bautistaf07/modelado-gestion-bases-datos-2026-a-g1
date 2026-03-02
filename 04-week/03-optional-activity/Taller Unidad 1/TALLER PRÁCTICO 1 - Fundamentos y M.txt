@@ -1,0 +1,41 @@
+TALLER PRÁCTICO 1 - Fundamentos y Modelo Entidad-Relación
+
+Pregunta 1. Identifique los DATOS que manejaría el sistema (mínimo 8) y explique cómo se transforman en INFORMACIÓN útil para la institución. 
+
+1. id_estudiante, es la identificación única que tiene cada estudiante, evita duplicados de estudiantes
+2. nombre y apellidos del estudiante, listados oficiales por grupo/curso, control y reportes administrativos
+3. correo y teléfono, en donde se establece la comunicación para avisos de matrícula, cambios de horario, alertas, etc
+4. fecha_registro / fecha_ingreso, análisis por cohortes, cuántos ingresan por periodo y retención/deserción
+5. id_programa y nombre_programa, matrícula por programa, demanda académica por área y planeación de cupos
+6. id_curso, nombre_curso, créditos, carga académica de cada estudiante, créditos matriculados y cursos más demandados
+7. id_periodo, año/termino, fechas inicio-fin, comparaciones por semestre, crecimiento de matrícula, rendimiento por periodo, planeación anual.
+8. id_grupo(del curso en un periodo), qué grupos se abrieron, cuántos estudiantes por grupo
+
+Pregunta 2. Diseñe el modelo Entidad-Relación (ER) que incluya al menos las entidades: Estudiante, Curso y Matrícula. Debe especificar atributos, claves primarias y cardinalidades.
+
+Modelo ya subido en el git y en el Moodle.
+
+Pregunta 3: Agregue al modelo una entidad adicional llamada Docente y relacione correctamente con Curso. Indique la cardinalidad y justifique su decisión. 
+
+Respuesta ya agregada en el modelo
+Justificación: La relación entre Docente y Curso es 1:N porque un docente puede impartir varios cursos en diferente horario. Se asume que corresponde un docente responsable por curso para mantener control, facilitando la asignación de cursos, consultas por docente y reportes académicos sin ambigüedades.
+
+
+Pregunta 4: Incorpore una generalización donde Persona pueda especializarse en Estudiante o Docente. Defina si la especialización es total o parcial, y si es disjoint u overlap, explicando brevemente por qué. 
+
+La especialización Persona → Estudiante / Docente es total porque en este sistema cualquier persona que se registre debe ser obligatoriamente estudiante o docente, sin manejar otros tipos de personas. Es disjoint porque se asume que una misma persona no puede estar en los dos roles al mismo tiempo; o sea, o es estudiante o es docente, para que no se generen confusiones en matrículas y asignación de cursos.
+
+Pregunta 5: Convierta su modelo ER final al modelo relacional. Liste las tablas resultantes indicando: Nombre de tabla, clave primaria (PK) y claves foráneas (FK). 
+
+
+| Tabla          | Clave primaria (PK) | Claves foráneas (FK)                                                          |
+| -------------- | ------------------- | ----------------------------------------------------------------------------- |
+|   PERSONA      | `id_persona`        | —                                                                             |
+|   ESTUDIANTE   | `id_persona`        | id_persona → PERSONA(id_persona), id_programa → PROGRAMA(id_programa)         |
+|   DOCENTE      | `id_persona`        | id_persona → PERSONA(id_persona)                                              |
+|   PROGRAMA     | `id_programa`       | —                                                                             |
+|   CURSO        | `id_curso`          | id_docente → DOCENTE(id_persona)                                              |
+|   PERIODO      | `id_periodo`        | —                                                                             |
+|   GRUPO        | `id_grupo`          | id_curso → CURSO(id_curso), id_periodo → PERIODO(id_periodo)                  |
+|   MATRICULA    | `id_matricula`      | id_estudiante → ESTUDIANTE(id_persona), id_grupo → GRUPO(id_grupo)            |
+
